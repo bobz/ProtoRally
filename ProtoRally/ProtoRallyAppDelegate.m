@@ -10,6 +10,7 @@
 #import "EventListVC.h"
 #import "EventEntryVC.h"
 #import "EventDetailVC.h"
+#import "Event.h"
 
 @implementation ProtoRallyAppDelegate
 
@@ -24,6 +25,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Event eventForTesting:@"String One" inManagedObjectContext:self.managedObjectContext];
+    [Event eventForTesting:@"String Two" inManagedObjectContext:self.managedObjectContext];
+    [Event eventForTesting:@"String Three" inManagedObjectContext:self.managedObjectContext];
+                                                                                     
+                                                                                     
+    [self saveContext];
+    
     EventListVC *list = [[EventListVC alloc] initWithManagedObjectContext:self.managedObjectContext];
     EventEntryVC *entry = [[EventEntryVC alloc] initWithManagedObjectContext:self.managedObjectContext];
     EventDetailVC *detail = [[EventDetailVC alloc] initWithManagedObjectContext:self.managedObjectContext];
