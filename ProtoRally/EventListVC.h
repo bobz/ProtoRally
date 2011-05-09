@@ -10,7 +10,6 @@
 
 
 @interface EventListVC : UITableViewController {
-    NSArray *events;
 }
 
 @end

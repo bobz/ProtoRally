@@ -14,15 +14,15 @@
 
 @implementation EventListVC
 
-@synthesize events;
+@synthesize events = _events;
 
 - (NSArray *)events
 {
-    if (!events)
+    if (!_events)
     {
-        events = [[NSArray arrayWithObjects:@"String A", @"String B", nil] retain];
+        _events = [[NSArray arrayWithObjects:@"String A", @"String B", nil] retain];
     }
-    return events;
+    return _events;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -36,7 +36,7 @@
 
 - (void)dealloc
 {
-    [events release];
+    [_events release];
     [super dealloc];
 }
 
