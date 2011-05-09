@@ -29,6 +29,7 @@
 		4844BA1A1377784F00F37062 /* EventEntryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4844BA141377784F00F37062 /* EventEntryVC.xib */; };
 		4844BA1B1377784F00F37062 /* EventDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4844BA151377784F00F37062 /* EventDetailVC.xib */; };
 		4844BA1D1377785C00F37062 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4844BA1C1377785C00F37062 /* Default-Landscape~ipad.png */; };
+		4844BA1F137779D700F37062 /* SmallFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 4844BA1E137779D700F37062 /* SmallFace.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		4844BA141377784F00F37062 /* EventEntryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventEntryVC.xib; sourceTree = "<group>"; };
 		4844BA151377784F00F37062 /* EventDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailVC.xib; sourceTree = "<group>"; };
 		4844BA1C1377785C00F37062 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		4844BA1E137779D700F37062 /* SmallFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmallFace.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		4844B9C51377782800F37062 = {
 			isa = PBXGroup;
 			children = (
+				4844BA1E137779D700F37062 /* SmallFace.png */,
 				4844BA1C1377785C00F37062 /* Default-Landscape~ipad.png */,
 				4844B9DC1377782800F37062 /* ProtoRally */,
 				4844B9FA1377782800F37062 /* ProtoRallyTests */,
@@ -252,6 +255,7 @@
 				4844BA1A1377784F00F37062 /* EventEntryVC.xib in Resources */,
 				4844BA1B1377784F00F37062 /* EventDetailVC.xib in Resources */,
 				4844BA1D1377785C00F37062 /* Default-Landscape~ipad.png in Resources */,
+				4844BA1F137779D700F37062 /* SmallFace.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
