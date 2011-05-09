@@ -13,4 +13,6 @@
     
 }
 
+- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
 @end

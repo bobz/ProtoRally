@@ -9,11 +9,13 @@
 #import "EventListVC.h"
 
 @interface EventListVC()
+@property (retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSArray *events;
 @end
 
 @implementation EventListVC
 
+@synthesize managedObjectContext = _managedObjectContext;
 @synthesize events = _events;
 
 - (NSArray *)events
@@ -25,12 +27,18 @@
     return _events;
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithStyle:(UITableViewStyle)style managedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        self.managedObjectContext = managedObjectContext;
     }
+    return self;
+}
+
+- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    self = [self initWithStyle:UITableViewStylePlain managedObjectContext:managedObjectContext];
     return self;
 }
 

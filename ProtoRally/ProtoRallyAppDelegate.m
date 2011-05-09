@@ -24,9 +24,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    EventListVC *list = [[EventListVC alloc] init];
-    EventEntryVC *entry = [[EventEntryVC alloc] init];
-    EventDetailVC *detail = [[EventDetailVC alloc] init];
+    EventListVC *list = [[EventListVC alloc] initWithManagedObjectContext:self.managedObjectContext];
+    EventEntryVC *entry = [[EventEntryVC alloc] initWithManagedObjectContext:self.managedObjectContext];
+    EventDetailVC *detail = [[EventDetailVC alloc] initWithManagedObjectContext:self.managedObjectContext];
     
     UISplitViewController *svc2 = [[UISplitViewController alloc] init];  
     svc2.viewControllers = [NSArray arrayWithObjects:list, detail, nil];

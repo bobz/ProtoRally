@@ -7,16 +7,28 @@
 //
 
 #import "EventDetailVC.h"
+#import <CoreData/CoreData.h>
 
+@interface EventDetailVC()
+@property (retain) NSManagedObjectContext *managedObjectContext;
+@end
 
 @implementation EventDetailVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+@synthesize managedObjectContext = _managedObjectContext;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil managedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.managedObjectContext = managedObjectContext;
     }
+    return self;
+}
+
+- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    self = [self initWithNibName:nil bundle:nil managedObjectContext:managedObjectContext];
     return self;
 }
 

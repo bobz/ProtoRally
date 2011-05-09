@@ -5,18 +5,29 @@
 //  Created by bobz on 5/8/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
-
+#import <CoreData/CoreData.h>
 #import "EventEntryVC.h"
 
+@interface EventEntryVC()
+@property (retain) NSManagedObjectContext *managedObjectContext;
+@end
 
 @implementation EventEntryVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+@synthesize managedObjectContext = _managedObjectContext;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil managedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.managedObjectContext = managedObjectContext;
     }
+    return self;
+}
+
+- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    self = [self initWithNibName:nil bundle:nil managedObjectContext:managedObjectContext];
     return self;
 }
 

@@ -13,6 +13,8 @@
     
 }
 
+- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
 - (IBAction)addEvent:(id)sender;
 
 @end

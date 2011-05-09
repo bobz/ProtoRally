@@ -12,4 +12,6 @@
 @interface EventListVC : UITableViewController {
 }
 
+- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
 @end
