@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4844B9D51377782800F37062 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9D41377782800F37062 /* UIKit.framework */; };
+		4844B9D71377782800F37062 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9D61377782800F37062 /* Foundation.framework */; };
+		4844B9D91377782800F37062 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9D81377782800F37062 /* CoreGraphics.framework */; };
+		4844B9DB1377782800F37062 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9DA1377782800F37062 /* CoreData.framework */; };
+		4844B9E11377782800F37062 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4844B9DF1377782800F37062 /* InfoPlist.strings */; };
+		4844B9E41377782800F37062 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4844B9E31377782800F37062 /* main.m */; };
+		4844B9E71377782800F37062 /* ProtoRallyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4844B9E61377782800F37062 /* ProtoRallyAppDelegate.m */; };
+		4844B9EA1377782800F37062 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4844B9E81377782800F37062 /* MainWindow.xib */; };
+		4844B9ED1377782800F37062 /* ProtoRally.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4844B9EB1377782800F37062 /* ProtoRally.xcdatamodeld */; };
+		4844B9F41377782800F37062 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9D41377782800F37062 /* UIKit.framework */; };
+		4844B9F51377782800F37062 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9D61377782800F37062 /* Foundation.framework */; };
+		4844B9F61377782800F37062 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9D81377782800F37062 /* CoreGraphics.framework */; };
+		4844B9F71377782800F37062 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9DA1377782800F37062 /* CoreData.framework */; };
+		4844B9FF1377782800F37062 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4844B9FD1377782800F37062 /* InfoPlist.strings */; };
+		4844BA021377782800F37062 /* ProtoRallyTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 4844BA011377782800F37062 /* ProtoRallyTests.h */; };
+		4844BA041377782800F37062 /* ProtoRallyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4844BA031377782800F37062 /* ProtoRallyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4844B9F81377782800F37062 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4844B9C71377782800F37062 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4844B9CF1377782800F37062;
+			remoteInfo = ProtoRally;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4844B9D01377782800F37062 /* ProtoRally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtoRally.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4844B9D41377782800F37062 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4844B9D61377782800F37062 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4844B9D81377782800F37062 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4844B9DA1377782800F37062 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4844B9DE1377782800F37062 /* ProtoRally-Info.plist */ = {isa = PBXFileReference; path = "ProtoRally-Info.plist"; sourceTree = "<group>"; };
+		4844B9E01377782800F37062 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4844B9E21377782800F37062 /* ProtoRally-Prefix.pch */ = {isa = PBXFileReference; path = "ProtoRally-Prefix.pch"; sourceTree = "<group>"; };
+		4844B9E31377782800F37062 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4844B9E51377782800F37062 /* ProtoRallyAppDelegate.h */ = {isa = PBXFileReference; path = ProtoRallyAppDelegate.h; sourceTree = "<group>"; };
+		4844B9E61377782800F37062 /* ProtoRallyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtoRallyAppDelegate.m; sourceTree = "<group>"; };
+		4844B9E91377782800F37062 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4844B9EC1377782800F37062 /* ProtoRally.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProtoRally.xcdatamodel; sourceTree = "<group>"; };
+		4844B9F31377782800F37062 /* ProtoRallyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProtoRallyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4844B9FC1377782800F37062 /* ProtoRallyTests-Info.plist */ = {isa = PBXFileReference; path = "ProtoRallyTests-Info.plist"; sourceTree = "<group>"; };
+		4844B9FE1377782800F37062 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4844BA001377782800F37062 /* ProtoRallyTests-Prefix.pch */ = {isa = PBXFileReference; path = "ProtoRallyTests-Prefix.pch"; sourceTree = "<group>"; };
+		4844BA011377782800F37062 /* ProtoRallyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtoRallyTests.h; sourceTree = "<group>"; };
+		4844BA031377782800F37062 /* ProtoRallyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtoRallyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4844B9CD1377782800F37062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4844B9D51377782800F37062 /* UIKit.framework in Frameworks */,
+				4844B9D71377782800F37062 /* Foundation.framework in Frameworks */,
+				4844B9D91377782800F37062 /* CoreGraphics.framework in Frameworks */,
+				4844B9DB1377782800F37062 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4844B9EF1377782800F37062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4844B9F41377782800F37062 /* UIKit.framework in Frameworks */,
+				4844B9F51377782800F37062 /* Foundation.framework in Frameworks */,
+				4844B9F61377782800F37062 /* CoreGraphics.framework in Frameworks */,
+				4844B9F71377782800F37062 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4844B9C51377782800F37062 = {
+			isa = PBXGroup;
+			children = (
+				4844B9DC1377782800F37062 /* ProtoRally */,
+				4844B9FA1377782800F37062 /* ProtoRallyTests */,
+				4844B9D31377782800F37062 /* Frameworks */,
+				4844B9D11377782800F37062 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4844B9D11377782800F37062 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4844B9D01377782800F37062 /* ProtoRally.app */,
+				4844B9F31377782800F37062 /* ProtoRallyTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4844B9D31377782800F37062 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4844B9D41377782800F37062 /* UIKit.framework */,
+				4844B9D61377782800F37062 /* Foundation.framework */,
+				4844B9D81377782800F37062 /* CoreGraphics.framework */,
+				4844B9DA1377782800F37062 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4844B9DC1377782800F37062 /* ProtoRally */ = {
+			isa = PBXGroup;
+			children = (
+				4844B9E51377782800F37062 /* ProtoRallyAppDelegate.h */,
+				4844B9E61377782800F37062 /* ProtoRallyAppDelegate.m */,
+				4844B9E81377782800F37062 /* MainWindow.xib */,
+				4844B9EB1377782800F37062 /* ProtoRally.xcdatamodeld */,
+				4844B9DD1377782800F37062 /* Supporting Files */,
+			);
+			path = ProtoRally;
+			sourceTree = "<group>";
+		};
+		4844B9DD1377782800F37062 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4844B9DE1377782800F37062 /* ProtoRally-Info.plist */,
+				4844B9DF1377782800F37062 /* InfoPlist.strings */,
+				4844B9E21377782800F37062 /* ProtoRally-Prefix.pch */,
+				4844B9E31377782800F37062 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4844B9FA1377782800F37062 /* ProtoRallyTests */ = {
+			isa = PBXGroup;
+			children = (
+				4844BA011377782800F37062 /* ProtoRallyTests.h */,
+				4844BA031377782800F37062 /* ProtoRallyTests.m */,
+				4844B9FB1377782800F37062 /* Supporting Files */,
+			);
+			path = ProtoRallyTests;
+			sourceTree = "<group>";
+		};
+		4844B9FB1377782800F37062 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4844B9FC1377782800F37062 /* ProtoRallyTests-Info.plist */,
+				4844B9FD1377782800F37062 /* InfoPlist.strings */,
+				4844BA001377782800F37062 /* ProtoRallyTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4844B9CF1377782800F37062 /* ProtoRally */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4844BA071377782800F37062 /* Build configuration list for PBXNativeTarget "ProtoRally" */;
+			buildPhases = (
+				4844B9CC1377782800F37062 /* Sources */,
+				4844B9CD1377782800F37062 /* Frameworks */,
+				4844B9CE1377782800F37062 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProtoRally;
+			productName = ProtoRally;
+			productReference = 4844B9D01377782800F37062 /* ProtoRally.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4844B9F21377782800F37062 /* ProtoRallyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4844BA0A1377782800F37062 /* Build configuration list for PBXNativeTarget "ProtoRallyTests" */;
+			buildPhases = (
+				4844B9EE1377782800F37062 /* Sources */,
+				4844B9EF1377782800F37062 /* Frameworks */,
+				4844B9F01377782800F37062 /* Resources */,
+				4844B9F11377782800F37062 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4844B9F91377782800F37062 /* PBXTargetDependency */,
+			);
+			name = ProtoRallyTests;
+			productName = ProtoRallyTests;
+			productReference = 4844B9F31377782800F37062 /* ProtoRallyTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4844B9C71377782800F37062 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4844B9CA1377782800F37062 /* Build configuration list for PBXProject "ProtoRally" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4844B9C51377782800F37062;
+			productRefGroup = 4844B9D11377782800F37062 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4844B9CF1377782800F37062 /* ProtoRally */,
+				4844B9F21377782800F37062 /* ProtoRallyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4844B9CE1377782800F37062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4844B9E11377782800F37062 /* InfoPlist.strings in Resources */,
+				4844B9EA1377782800F37062 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4844B9F01377782800F37062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4844B9FF1377782800F37062 /* InfoPlist.strings in Resources */,
+				4844BA021377782800F37062 /* ProtoRallyTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4844B9F11377782800F37062 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4844B9CC1377782800F37062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4844B9E41377782800F37062 /* main.m in Sources */,
+				4844B9E71377782800F37062 /* ProtoRallyAppDelegate.m in Sources */,
+				4844B9ED1377782800F37062 /* ProtoRally.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4844B9EE1377782800F37062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4844BA041377782800F37062 /* ProtoRallyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4844B9F91377782800F37062 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4844B9CF1377782800F37062 /* ProtoRally */;
+			targetProxy = 4844B9F81377782800F37062 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4844B9DF1377782800F37062 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4844B9E01377782800F37062 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4844B9E81377782800F37062 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4844B9E91377782800F37062 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4844B9FD1377782800F37062 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4844B9FE1377782800F37062 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4844BA051377782800F37062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4844BA061377782800F37062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		4844BA081377782800F37062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProtoRally/ProtoRally-Prefix.pch";
+				INFOPLIST_FILE = "ProtoRally/ProtoRally-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4844BA091377782800F37062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProtoRally/ProtoRally-Prefix.pch";
+				INFOPLIST_FILE = "ProtoRally/ProtoRally-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4844BA0B1377782800F37062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProtoRally.app/ProtoRally";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProtoRallyTests/ProtoRallyTests-Prefix.pch";
+				INFOPLIST_FILE = "ProtoRallyTests/ProtoRallyTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		4844BA0C1377782800F37062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ProtoRally.app/ProtoRally";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProtoRallyTests/ProtoRallyTests-Prefix.pch";
+				INFOPLIST_FILE = "ProtoRallyTests/ProtoRallyTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4844B9CA1377782800F37062 /* Build configuration list for PBXProject "ProtoRally" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4844BA051377782800F37062 /* Debug */,
+				4844BA061377782800F37062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4844BA071377782800F37062 /* Build configuration list for PBXNativeTarget "ProtoRally" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4844BA081377782800F37062 /* Debug */,
+				4844BA091377782800F37062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4844BA0A1377782800F37062 /* Build configuration list for PBXNativeTarget "ProtoRallyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4844BA0B1377782800F37062 /* Debug */,
+				4844BA0C1377782800F37062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4844B9EB1377782800F37062 /* ProtoRally.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4844B9EC1377782800F37062 /* ProtoRally.xcdatamodel */,
+			);
+			currentVersion = 4844B9EC1377782800F37062 /* ProtoRally.xcdatamodel */;
+			path = ProtoRally.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4844B9C71377782800F37062 /* Project object */;
+}

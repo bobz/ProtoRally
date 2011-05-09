@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ProtoRallyTests' target in the 'ProtoRallyTests' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#endif
