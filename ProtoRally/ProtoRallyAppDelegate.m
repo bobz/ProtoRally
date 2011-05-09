@@ -7,6 +7,9 @@
 //
 
 #import "ProtoRallyAppDelegate.h"
+#import "EventListVC.h"
+#import "EventEntryVC.h"
+#import "EventDetailVC.h"
 
 @implementation ProtoRallyAppDelegate
 
@@ -21,6 +24,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    EventListVC *list = [[EventListVC alloc] init];
+    UINavigationController *listNav = [[UINavigationController alloc]init];
+    [listNav pushViewController:list animated:YES];
+    [list release];
+    
+    EventEntryVC *entry = [[EventEntryVC alloc] init];
+    UINavigationController *entryNav = [[UINavigationController alloc] init];
+    [entryNav pushViewController:entry animated:YES];
+    [entry release];
+    
+    EventDetailVC *detail = [[EventDetailVC alloc] init];
+    UINavigationController *detailNav = [[UINavigationController alloc] init];
+    [detailNav pushViewController:detail animated:YES];
+    [detail release];
+    
+    UISplitViewController *svc2 = [[UISplitViewController alloc] init];
+    //    svc.delegate = entry;
+    svc2.viewControllers = [NSArray arrayWithObjects:listNav, detailNav, nil];
+    [detailNav release]; [listNav release];
+    
+    UISplitViewController *svc1 = [[UISplitViewController alloc] init];
+    //    svc.delegate = entry;
+    svc1.viewControllers = [NSArray arrayWithObjects:entryNav, svc2, nil];
+    [entryNav release]; [svc2 release];
+    
+    
+    [self.window addSubview:svc1.view];
+    //[svc2 release];
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
     return YES;
