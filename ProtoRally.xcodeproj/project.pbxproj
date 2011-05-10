@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		48405238137898E100E50938 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 48405237137898E100E50938 /* Event.m */; };
-		4840523C13789BB000E50938 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4840523B13789BB000E50938 /* CoreDataTableViewController.m */; };
 		484052421378E4F400E50938 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 484052411378E4F400E50938 /* EventModel.m */; };
 		4844B9D51377782800F37062 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9D41377782800F37062 /* UIKit.framework */; };
 		4844B9D71377782800F37062 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9D61377782800F37062 /* Foundation.framework */; };
@@ -48,8 +47,6 @@
 /* Begin PBXFileReference section */
 		48405236137898E100E50938 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		48405237137898E100E50938 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
-		4840523A13789BB000E50938 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = ../CoreDataTableViewController.h; sourceTree = "<group>"; };
-		4840523B13789BB000E50938 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = ../CoreDataTableViewController.m; sourceTree = "<group>"; };
 		484052401378E4F400E50938 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		484052411378E4F400E50938 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		4844B9D01377782800F37062 /* ProtoRally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtoRally.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,8 +165,6 @@
 		4844B9DD1377782800F37062 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4840523A13789BB000E50938 /* CoreDataTableViewController.h */,
-				4840523B13789BB000E50938 /* CoreDataTableViewController.m */,
 				4844B9DE1377782800F37062 /* ProtoRally-Info.plist */,
 				4844B9DF1377782800F37062 /* InfoPlist.strings */,
 				4844B9E21377782800F37062 /* ProtoRally-Prefix.pch */,
@@ -313,7 +308,6 @@
 				4844BA171377784F00F37062 /* EventListVC.m in Sources */,
 				4844BA181377784F00F37062 /* EventDetailVC.m in Sources */,
 				48405238137898E100E50938 /* Event.m in Sources */,
-				4840523C13789BB000E50938 /* CoreDataTableViewController.m in Sources */,
 				484052421378E4F400E50938 /* EventModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
