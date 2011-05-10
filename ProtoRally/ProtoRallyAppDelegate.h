@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EventModel.h"
 
 @interface ProtoRallyAppDelegate : NSObject <UIApplicationDelegate> {
 
@@ -14,6 +15,8 @@
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
+@property (nonatomic, retain, readonly) EventModel *eventModel;
+@property (nonatomic, retain, readonly) NSObject <CoreDataDelegate> *coreDataDelegate;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;

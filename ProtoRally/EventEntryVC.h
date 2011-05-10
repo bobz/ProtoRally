@@ -8,13 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol EventEntryDelegate
+- (void)addEvent;
+- (void)resetAllEvents;
+@end
 
 @interface EventEntryVC : UIViewController {
     
 }
 
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+
+- (id)initWithEventEntryDelegate:(id <EventEntryDelegate>)eventEntryDelegate;
 
 - (IBAction)addEvent:(id)sender;
+- (IBAction)resetEvents:(id)sender;
 
 @end

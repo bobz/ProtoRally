@@ -10,10 +10,12 @@
 
 @interface EventEntryVC()
 @property (retain) NSManagedObjectContext *managedObjectContext;
+@property (retain) id <EventEntryDelegate> eventEntryDelegate;
 @end
 
 @implementation EventEntryVC
 
+@synthesize eventEntryDelegate = _eventEntryDelegate;
 @synthesize managedObjectContext = _managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil managedObjectContext:(NSManagedObjectContext *)managedObjectContext
@@ -31,9 +33,23 @@
     return self;
 }
 
+- (id)initWithEventEntryDelegate:(id <EventEntryDelegate>)eventEntryDelegate
+{
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        self.eventEntryDelegate = eventEntryDelegate;
+    }
+    return self;
+}
+
 - (IBAction)addEvent:(id)sender
 {
-    NSLog(@"IBAction found: %@", sender);
+    [self.eventEntryDelegate addEvent];
+}
+
+- (IBAction)resetEvents:(id)sender
+{
+    [self.eventEntryDelegate resetAllEvents];
 }
 
 - (void)dealloc

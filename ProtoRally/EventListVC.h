@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreDataTableViewController.h"
+#import "EventModel.h"
 
-
-@interface EventListVC : UITableViewController {
+@interface EventListVC : CoreDataTableViewController <EventModelListener>{
 }
 
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext;
+- (id)initWithEventModel:(EventModel *)eventModel;
+- (void)updateFromEventModel:(EventModel *)eventModel;
 
 @end

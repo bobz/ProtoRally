@@ -11,29 +11,20 @@
 #import "EventEntryVC.h"
 #import "EventDetailVC.h"
 #import "Event.h"
+#import "EventModel.h"
 
 @implementation ProtoRallyAppDelegate
 
 
 @synthesize window=_window;
 
-@synthesize managedObjectContext=__managedObjectContext;
-
-@synthesize managedObjectModel=__managedObjectModel;
-
-@synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
+@synthesize coreDataDelegate = _coreDataDelegate;
+@synthesize eventModel = _eventModel;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Event eventForTesting:@"String One" inManagedObjectContext:self.managedObjectContext];
-    [Event eventForTesting:@"String Two" inManagedObjectContext:self.managedObjectContext];
-    [Event eventForTesting:@"String Three" inManagedObjectContext:self.managedObjectContext];
-                                                                                     
-                                                                                     
-    [self saveContext];
-    
-    EventListVC *list = [[EventListVC alloc] initWithManagedObjectContext:self.managedObjectContext];
-    EventEntryVC *entry = [[EventEntryVC alloc] initWithManagedObjectContext:self.managedObjectContext];
+    EventListVC *list = [[EventListVC alloc] initWithEventModel:self.eventModel];
+    EventEntryVC *entry = [[EventEntryVC alloc] initWithEventEntryDelegate:self.eventModel];
     EventDetailVC *detail = [[EventDetailVC alloc] initWithManagedObjectContext:self.managedObjectContext];
     
     UISplitViewController *svc2 = [[UISplitViewController alloc] init];  
@@ -90,9 +81,7 @@
 - (void)dealloc
 {
     [_window release];
-    [__managedObjectContext release];
-    [__managedObjectModel release];
-    [__persistentStoreCoordinator release];
+    [_coreDataDelegate release];
     [super dealloc];
 }
 
@@ -106,24 +95,30 @@
 
 - (void)saveContext
 {
-    NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil)
-    {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
-        {
-            /*
-             Replace this implementation with code to handle the error appropriately.
-             
-             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-             */
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        } 
-    }
+    [self.coreDataDelegate saveContext];
 }
 
 #pragma mark - Core Data stack
+- (EventModel *)eventModel
+{
+    if (_eventModel != nil)
+    {
+        return _eventModel;
+    }
+    _eventModel = [[EventModel alloc]init];
+    return _eventModel;
+}
+
+- (NSObject <CoreDataDelegate> *)coreDataDelegate
+{
+    if (_coreDataDelegate != nil)
+    {
+        return _coreDataDelegate;
+    }
+    
+    _coreDataDelegate = self.eventModel;
+    return _coreDataDelegate;
+}
 
 /**
  Returns the managed object context for the application.
@@ -131,18 +126,7 @@
  */
 - (NSManagedObjectContext *)managedObjectContext
 {
-    if (__managedObjectContext != nil)
-    {
-        return __managedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (coordinator != nil)
-    {
-        __managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [__managedObjectContext setPersistentStoreCoordinator:coordinator];
-    }
-    return __managedObjectContext;
+    return self.coreDataDelegate.managedObjectContext;
 }
 
 /**
@@ -151,13 +135,7 @@
  */
 - (NSManagedObjectModel *)managedObjectModel
 {
-    if (__managedObjectModel != nil)
-    {
-        return __managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ProtoRally" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];    
-    return __managedObjectModel;
+    return self.coreDataDelegate.managedObjectModel;
 }
 
 /**
@@ -166,45 +144,7 @@
  */
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    if (__persistentStoreCoordinator != nil)
-    {
-        return __persistentStoreCoordinator;
-    }
-    
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"ProtoRally.sqlite"];
-    
-    NSError *error = nil;
-    __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
-    {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         
-         Typical reasons for an error here include:
-         * The persistent store is not accessible;
-         * The schema for the persistent store is incompatible with current managed object model.
-         Check the error message to determine what the actual problem was.
-         
-         
-         If the persistent store is not accessible, there is typically something wrong with the file path. Often, a file URL is pointing into the application's resources directory instead of a writeable directory.
-         
-         If you encounter schema incompatibility errors during development, you can reduce their frequency by:
-         * Simply deleting the existing store:
-         [[NSFileManager defaultManager] removeItemAtURL:storeURL error:nil]
-         
-         * Performing automatic lightweight migration by passing the following dictionary as the options parameter: 
-         [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption, [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
-         
-         Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
-         
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }    
-    
-    return __persistentStoreCoordinator;
+    return self.coreDataDelegate.persistentStoreCoordinator;
 }
 
 #pragma mark - Application's Documents directory
@@ -214,7 +154,7 @@
  */
 - (NSURL *)applicationDocumentsDirectory
 {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    return [self.coreDataDelegate applicationDocumentsDirectory];
 }
 
 @end
