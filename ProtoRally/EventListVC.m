@@ -40,7 +40,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     request.entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:eventModel.managedObjectContext];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"desc" ascending:YES]];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"desc" ascending:NO]];
     request.predicate = nil;
     request.fetchBatchSize = 20;
     
