@@ -39,6 +39,7 @@
     self.persistentStoreCoordinator = nil;
     self.managedObjectContext = nil;
     self.managedObjectModel = nil;
+    self.activeEvent = nil;
 //    [_persistentStoreCoordinator release]; _persistentStoreCoordinator = nil;
     for (NSObject *listener in self.listeners) {
         if ([listener conformsToProtocol:@protocol(EventModelUpdatedListener) ])
