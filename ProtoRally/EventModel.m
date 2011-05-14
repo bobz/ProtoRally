@@ -67,7 +67,7 @@
 
 -(void)addEvent
 {
-    [Event eventForTesting:[NSString stringWithFormat:@"Event %d", self.counter] inManagedObjectContext:self.managedObjectContext];
+    [self setActiveEvent: [Event eventForTesting:[NSString stringWithFormat:@"Event %d", self.counter] inManagedObjectContext:self.managedObjectContext]];
 
     self.counter = self.counter+1;
 }
