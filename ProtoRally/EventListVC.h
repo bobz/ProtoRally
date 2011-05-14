@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EventModel.h"
-@interface EventListVC : UITableViewController <NSFetchedResultsControllerDelegate, UISearchDisplayDelegate, EventModelListener>
+@interface EventListVC : UITableViewController <NSFetchedResultsControllerDelegate, UISearchDisplayDelegate, EventModelUpdatedListener>
 {
 	NSPredicate *normalPredicate;
 	NSString *currentSearchText;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "EventEntryVC.h"
+#import "Event.h"
 
 @class EventModel;
 
@@ -20,9 +20,19 @@
 -(NSURL *)applicationDocumentsDirectory;
 @end
 
-@protocol EventModelListener
+@protocol EventModelUpdatedListener
 - (void)updateFromEventModel:(EventModel *)eventModel;
 @end
+
+@protocol EventEntryDelegate
+- (void)addEvent;
+- (void)resetAllEvents;
+@end
+
+@protocol ActiveEventChangedListener
+- (void)activeEventChanged:(Event *)event;
+@end
+
 
 @interface EventModel : NSObject <EventEntryDelegate, CoreDataDelegate>
 {
@@ -32,9 +42,11 @@
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, retain) Event *activeEvent;
+
 
 -(void)saveContext;
 -(NSURL *)applicationDocumentsDirectory;
--(void)addEventModelListener:(NSObject <EventModelListener> *)eventModelListener;
+-(void)addEventModelListener:(NSObject *)eventModelListener;
 
 @end

@@ -7,11 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol EventEntryDelegate
-- (void)addEvent;
-- (void)resetAllEvents;
-@end
+#import "EventModel.h"
 
 @interface EventEntryVC : UIViewController {
     

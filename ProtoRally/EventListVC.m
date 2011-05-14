@@ -8,16 +8,22 @@
 
 #import "EventListVC.h"
 
+@interface EventListVC()
+@property (nonatomic, retain) EventModel *eventModel;
+@end
+
 @implementation EventListVC
 
 @synthesize fetchedResultsController;
 @synthesize titleKey, subtitleKey, searchKey;
+@synthesize eventModel = _eventModel;
 
 
 - (id)initWithStyle:(UITableViewStyle)style eventModel:(EventModel *)eventModel
 {
     self = [super initWithStyle:style];
     if (self) {
+        self.eventModel = eventModel;
         [eventModel addEventModelListener:self];
         [self updateFromEventModel:eventModel];
     }
@@ -50,6 +56,17 @@
     // AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
     // [self.navigationController pushViewController:anotherViewController];
     // [anotherViewController release];
+    
+    NSLog(@"Managed Object Selected");
+    
+    if ([managedObject isKindOfClass:[Event class]]) {
+        NSLog(@"Got Event: %@", managedObject);
+        [self.eventModel setActiveEvent:((Event *)managedObject)];  
+    }
+    else
+    {
+        NSLog(@"Got object: %@", managedObject);
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

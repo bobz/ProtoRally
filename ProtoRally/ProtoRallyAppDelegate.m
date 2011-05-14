@@ -25,7 +25,7 @@
 {
     EventListVC *list = [[EventListVC alloc] initWithEventModel:self.eventModel];
     EventEntryVC *entry = [[EventEntryVC alloc] initWithEventEntryDelegate:self.eventModel];
-    EventDetailVC *detail = [[EventDetailVC alloc] initWithManagedObjectContext:self.managedObjectContext];
+    EventDetailVC *detail = [[EventDetailVC alloc] initWithEventModel:self.eventModel];
     
     UISplitViewController *svc2 = [[UISplitViewController alloc] init];  
     svc2.viewControllers = [NSArray arrayWithObjects:list, detail, nil];

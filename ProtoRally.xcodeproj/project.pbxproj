@@ -143,8 +143,8 @@
 			children = (
 				4844B9E51377782800F37062 /* ProtoRallyAppDelegate.h */,
 				4844B9E61377782800F37062 /* ProtoRallyAppDelegate.m */,
-				484052401378E4F400E50938 /* EventModel.h */,
 				484052411378E4F400E50938 /* EventModel.m */,
+				484052401378E4F400E50938 /* EventModel.h */,
 				4844B9E81377782800F37062 /* MainWindow.xib */,
 				4844BA0E1377784F00F37062 /* EventEntryVC.m */,
 				4844BA0D1377784F00F37062 /* EventEntryVC.h */,

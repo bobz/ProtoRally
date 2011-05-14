@@ -10,26 +10,31 @@
 #import <CoreData/CoreData.h>
 
 @interface EventDetailVC()
-@property (retain) NSManagedObjectContext *managedObjectContext;
+@property (retain) EventModel *eventModel;
 @end
 
 @implementation EventDetailVC
 
-@synthesize managedObjectContext = _managedObjectContext;
+@synthesize eventModel = _eventModel;
+@synthesize textField = _textField;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil managedObjectContext:(NSManagedObjectContext *)managedObjectContext
+
+- (id)initWithEventModel:(EventModel *)eventModel
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        self.managedObjectContext = managedObjectContext;
+        self.eventModel = eventModel;
+        [eventModel addEventModelListener:self];
     }
     return self;
 }
 
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+
+
+
+- (void)activeEventChanged:(Event *)event
 {
-    self = [self initWithNibName:nil bundle:nil managedObjectContext:managedObjectContext];
-    return self;
+    self.textField.text = event.desc;
 }
 
 - (void)dealloc

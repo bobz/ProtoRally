@@ -26,6 +26,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
+@synthesize activeEvent = _activeEvent;
 
 -(void)resetAllEvents
 {
@@ -39,8 +40,27 @@
     self.managedObjectContext = nil;
     self.managedObjectModel = nil;
 //    [_persistentStoreCoordinator release]; _persistentStoreCoordinator = nil;
-    for (NSObject <EventModelListener> *listener in self.listeners) {
-        [listener updateFromEventModel:self];
+    for (NSObject *listener in self.listeners) {
+        if ([listener conformsToProtocol:@protocol(EventModelUpdatedListener) ])
+        {
+            [((id<EventModelUpdatedListener>) listener) updateFromEventModel:self];
+        }
+    }
+}
+
+-(void)setActiveEvent:(Event *)event
+{
+    NSLog(@"Setting Active Event to %@", event.desc);
+
+    [_activeEvent release];
+    _activeEvent = event;
+    [_activeEvent retain];
+        
+    for (NSObject *listener in self.listeners) {
+        if ([listener conformsToProtocol:@protocol(ActiveEventChangedListener) ])
+        {
+            [((id<ActiveEventChangedListener>) listener) activeEventChanged:event];
+        }
     }
 }
 
@@ -180,7 +200,7 @@
     return _listeners;
 }
 
--(void)addEventModelListener:(NSObject<EventModelListener> *)eventModelListener
+-(void)addEventModelListener:(NSObject *)eventModelListener
 {
     [self.listeners addObject:eventModelListener];
 }
