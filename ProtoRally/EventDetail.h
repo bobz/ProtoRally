@@ -1,5 +1,5 @@
 //
-//  Event.h
+//  EventDetail.h
 //  ProtoRally
 //
 //  Created by bobz on 5/15/11.
@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class EventDetail, EventImpact;
+@class Event, EventImpact;
 
-@interface Event : NSManagedObject {
+@interface EventDetail : NSManagedObject {
 @private
 }
 @property (nonatomic, retain) NSString * type;
-@property (nonatomic, retain) NSNumber * eventIndex;
-@property (nonatomic, retain) NSSet* details;
-@property (nonatomic, retain) NSSet* impacts;
+@property (nonatomic, retain) NSString * value;
+@property (nonatomic, retain) Event * parentEvent;
+@property (nonatomic, retain) NSSet* detailImpacts;
 
 @end

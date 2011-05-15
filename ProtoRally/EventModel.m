@@ -15,8 +15,7 @@
 @property (nonatomic, retain) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain, readonly) NSMutableSet *listeners;
-
-@property int counter;
+@property (nonatomic, retain) NSNumber *counter;
 @end
 
 @implementation EventModel
@@ -51,7 +50,7 @@
 
 -(void)setActiveEvent:(Event *)event
 {
-    NSLog(@"Setting Active Event to %@", event.desc);
+    NSLog(@"Setting Active Event to %@", event.eventIndex);
 
     [_activeEvent release];
     _activeEvent = event;
@@ -67,9 +66,30 @@
 
 -(void)addEvent
 {
-    [self setActiveEvent: [Event eventForTesting:[NSString stringWithFormat:@"Event %d", self.counter] inManagedObjectContext:self.managedObjectContext]];
+    [self setActiveEvent: [self eventForIndex:self.counter]];
 
-    self.counter = self.counter+1;
+    self.counter  = [NSNumber numberWithInt:[self.counter intValue] +1];
+}
+
+-(Event *)eventForIndex:(NSNumber *)eventIndex
+{
+    Event *event = nil;
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request.entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    request.predicate = [NSPredicate predicateWithFormat:@"eventIndex = %@", eventIndex];
+    
+    NSError *error = nil;
+    event = [[self.managedObjectContext executeFetchRequest:request error:&error] lastObject];
+    
+    if (!error && !event)
+    {
+        event = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+        event.eventIndex = eventIndex;
+        event.type = @"Default Type";
+    }
+    
+    return event;
 }
 
 

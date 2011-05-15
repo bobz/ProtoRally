@@ -40,7 +40,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     request.entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:eventModel.managedObjectContext];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"desc" ascending:NO]];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"type" ascending:NO]];
     request.predicate = nil;
     request.fetchBatchSize = 20;
     
@@ -72,7 +72,8 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-	return YES;
+    
+    return YES;
 } 
 
 - (void)createSearchBar

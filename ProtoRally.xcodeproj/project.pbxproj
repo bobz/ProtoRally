@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48405238137898E100E50938 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 48405237137898E100E50938 /* Event.m */; };
 		484052421378E4F400E50938 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 484052411378E4F400E50938 /* EventModel.m */; };
 		4844B9D51377782800F37062 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9D41377782800F37062 /* UIKit.framework */; };
 		4844B9D71377782800F37062 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4844B9D61377782800F37062 /* Foundation.framework */; };
@@ -32,6 +31,9 @@
 		4844BA1B1377784F00F37062 /* EventDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4844BA151377784F00F37062 /* EventDetailVC.xib */; };
 		4844BA1D1377785C00F37062 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4844BA1C1377785C00F37062 /* Default-Landscape~ipad.png */; };
 		4844BA1F137779D700F37062 /* SmallFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 4844BA1E137779D700F37062 /* SmallFace.png */; };
+		4862D391138057B60061DE1D /* EventDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4862D390138057B60061DE1D /* EventDetail.m */; };
+		4862D394138057B60061DE1D /* EventImpact.m in Sources */ = {isa = PBXBuildFile; fileRef = 4862D393138057B60061DE1D /* EventImpact.m */; };
+		4862D397138057B70061DE1D /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 4862D396138057B70061DE1D /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		48405236137898E100E50938 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Event.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		48405237137898E100E50938 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Event.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		484052401378E4F400E50938 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		484052411378E4F400E50938 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EventModel.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4844B9D01377782800F37062 /* ProtoRally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtoRally.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +78,12 @@
 		4844BA151377784F00F37062 /* EventDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailVC.xib; sourceTree = "<group>"; };
 		4844BA1C1377785C00F37062 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		4844BA1E137779D700F37062 /* SmallFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmallFace.png; sourceTree = "<group>"; };
+		4862D38F138057B60061DE1D /* EventDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetail.h; sourceTree = "<group>"; };
+		4862D390138057B60061DE1D /* EventDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetail.m; sourceTree = "<group>"; };
+		4862D392138057B60061DE1D /* EventImpact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventImpact.h; sourceTree = "<group>"; };
+		4862D393138057B60061DE1D /* EventImpact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventImpact.m; sourceTree = "<group>"; };
+		4862D395138057B70061DE1D /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		4862D396138057B70061DE1D /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +161,12 @@
 				4844BA141377784F00F37062 /* EventEntryVC.xib */,
 				4844BA151377784F00F37062 /* EventDetailVC.xib */,
 				4844B9EB1377782800F37062 /* ProtoRally.xcdatamodeld */,
-				48405236137898E100E50938 /* Event.h */,
-				48405237137898E100E50938 /* Event.m */,
+				4862D38F138057B60061DE1D /* EventDetail.h */,
+				4862D390138057B60061DE1D /* EventDetail.m */,
+				4862D392138057B60061DE1D /* EventImpact.h */,
+				4862D393138057B60061DE1D /* EventImpact.m */,
+				4862D395138057B70061DE1D /* Event.h */,
+				4862D396138057B70061DE1D /* Event.m */,
 				4844B9DD1377782800F37062 /* Supporting Files */,
 			);
 			path = ProtoRally;
@@ -307,8 +317,10 @@
 				4844BA161377784F00F37062 /* EventEntryVC.m in Sources */,
 				4844BA171377784F00F37062 /* EventListVC.m in Sources */,
 				4844BA181377784F00F37062 /* EventDetailVC.m in Sources */,
-				48405238137898E100E50938 /* Event.m in Sources */,
 				484052421378E4F400E50938 /* EventModel.m in Sources */,
+				4862D391138057B60061DE1D /* EventDetail.m in Sources */,
+				4862D394138057B60061DE1D /* EventImpact.m in Sources */,
+				4862D397138057B70061DE1D /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

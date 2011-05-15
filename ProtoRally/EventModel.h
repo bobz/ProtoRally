@@ -48,5 +48,6 @@
 -(void)saveContext;
 -(NSURL *)applicationDocumentsDirectory;
 -(void)addEventModelListener:(NSObject *)eventModelListener;
+-(Event *)eventForIndex:(NSNumber *)index;
 
 @end

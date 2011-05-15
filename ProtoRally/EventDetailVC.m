@@ -34,7 +34,7 @@
 
 - (void)activeEventChanged:(Event *)event
 {
-    self.textField.text = event.desc;
+    self.textField.text = [NSString stringWithFormat:@"Event #:%@",event.eventIndex];
 }
 
 - (void)dealloc
