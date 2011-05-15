@@ -27,6 +27,16 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize activeEvent = _activeEvent;
 
+-(NSNumber *)counter
+{
+    if (!_counter) {
+        _counter = [[NSNumber numberWithInt:0] retain];
+    }
+    return _counter;
+    
+
+}
+
 -(void)resetAllEvents
 {
     NSArray *stores = [self.persistentStoreCoordinator persistentStores];
@@ -39,6 +49,7 @@
     self.managedObjectContext = nil;
     self.managedObjectModel = nil;
     self.activeEvent = nil;
+    self.counter = 0;
 //    [_persistentStoreCoordinator release]; _persistentStoreCoordinator = nil;
     for (NSObject *listener in self.listeners) {
         if ([listener conformsToProtocol:@protocol(EventModelUpdatedListener) ])
