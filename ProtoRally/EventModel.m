@@ -64,11 +64,17 @@
     }
 }
 
--(void)addEvent
-{
-    [self setActiveEvent: [self eventForIndex:self.counter]];
 
+-(Event *)newIndexedEvent
+{
+    Event *event = nil;
+    event = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    event.eventIndex = self.counter;
+    event.type = @"Default Type";
+    
     self.counter  = [NSNumber numberWithInt:[self.counter intValue] +1];
+    
+    return event;
 }
 
 -(Event *)eventForIndex:(NSNumber *)eventIndex
@@ -84,14 +90,25 @@
     
     if (!error && !event)
     {
-        event = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
-        event.eventIndex = eventIndex;
-        event.type = @"Default Type";
+        event = [self newIndexedEvent];
     }
     
     return event;
 }
 
+-(Event *)newEventOfType:(NSString *)eventType
+{
+    Event *event = [self newIndexedEvent];
+    event.type = eventType;
+    
+    return event;
+}
+
+
+-(void)addNewEventOfType:(NSString *)eventType
+{
+    [self setActiveEvent: [self newEventOfType:eventType]];
+}
 
 -(void)saveContext
 {

@@ -25,7 +25,7 @@
 @end
 
 @protocol EventEntryDelegate
-- (void)addEvent;
+- (void)addNewEventOfType:(NSString *) eventType;
 - (void)resetAllEvents;
 @end
 
@@ -49,5 +49,5 @@
 -(NSURL *)applicationDocumentsDirectory;
 -(void)addEventModelListener:(NSObject *)eventModelListener;
 -(Event *)eventForIndex:(NSNumber *)index;
-
+-(void)addNewEventOfType:(NSString *)eventType;
 @end

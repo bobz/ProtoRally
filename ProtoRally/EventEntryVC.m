@@ -44,7 +44,7 @@
 
 - (IBAction)addEvent:(id)sender
 {
-    [self.eventEntryDelegate addEvent];
+    [self.eventEntryDelegate addNewEventOfType:((UIButton *) sender).titleLabel.text];
 }
 
 - (IBAction)resetEvents:(id)sender
