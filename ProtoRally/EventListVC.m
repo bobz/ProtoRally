@@ -174,9 +174,9 @@
 	return nil;
 }
 
-- (void)configureCell:(UITableViewCell *)cell forManagedObject:(NSManagedObject *)managedObject
-{
-}
+//- (void)configureCell:(UITableViewCell *)cell forManagedObject:(NSManagedObject *)managedObject
+//{
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForManagedObject:(NSManagedObject *)managedObject
 {
