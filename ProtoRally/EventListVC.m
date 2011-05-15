@@ -25,6 +25,8 @@
     if (self) {
         self.eventModel = eventModel;
         [eventModel addEventModelListener:self];
+        self.titleKey=@"type";
+//        self.subtitleKey=@"eventIndex";
         [self updateFromEventModel:eventModel];
     }
     return self;
@@ -40,7 +42,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     request.entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:eventModel.managedObjectContext];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"type" ascending:NO]];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"eventIndex" ascending:NO]];
     request.predicate = nil;
     request.fetchBatchSize = 20;
     
