@@ -26,7 +26,7 @@
         self.eventModel = eventModel;
         [eventModel addEventModelListener:self];
         self.titleKey=@"type";
-//        self.subtitleKey=@"eventIndex";
+        self.subtitleKey=@"eventIndex";
         [self updateFromEventModel:eventModel];
     }
     return self;
@@ -192,7 +192,7 @@
     }
 	
 	if (self.titleKey) cell.textLabel.text = [managedObject valueForKey:self.titleKey];
-	if (self.subtitleKey) cell.detailTextLabel.text = [managedObject valueForKey:self.subtitleKey];
+	if (self.subtitleKey) cell.detailTextLabel.text = [NSString stringWithFormat:@"#%@", [managedObject valueForKey:self.subtitleKey]];
 	cell.accessoryType = [self accessoryTypeForManagedObject:managedObject];
 	UIImage *thumbnail = [self thumbnailImageForManagedObject:managedObject];
 	if (thumbnail) cell.imageView.image = thumbnail;
