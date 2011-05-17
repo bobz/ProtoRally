@@ -8,16 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Event.h"
-#import "EventModel.h"
 
-@interface EventDetailVC : UIViewController <ActiveEventChangedListener> {
+@interface EventDetailVC : UIViewController {
     
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *textField;
+@property (nonatomic, retain) Event *event;
 
-
-- (id)initWithEventModel:(EventModel *)eventModel;
-- (void)activeEventChanged:(Event *)event;
+- (id)initWithEvent:(Event *)event;
 
 @end

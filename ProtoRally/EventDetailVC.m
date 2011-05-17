@@ -9,37 +9,42 @@
 #import "EventDetailVC.h"
 #import <CoreData/CoreData.h>
 
-@interface EventDetailVC()
-@property (retain) EventModel *eventModel;
-@end
-
 @implementation EventDetailVC
 
-@synthesize eventModel = _eventModel;
 @synthesize textField = _textField;
+@synthesize event = _event;
 
-
-- (id)initWithEventModel:(EventModel *)eventModel
+- (id)initWithEvent:(Event *)event
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
-        self.eventModel = eventModel;
-        [eventModel addEventModelListener:self];
+        self.event = event;
+//        [eventModel addEventModelListener:self];
     }
     return self;
 }
 
-
-
-
-- (void)activeEventChanged:(Event *)event
+-(void)displayEvent
 {
-    self.textField.text = [NSString stringWithFormat:@"Event #:%@",event.eventIndex];
+    if (self.event)
+    {
+        self.textField.text =  [NSString stringWithFormat:@"Event #:%@",self.event.eventIndex];
+    }
 }
 
 - (void)dealloc
 {
     [super dealloc];
+}
+
+- (void)setEvent:(Event *)event
+{
+    if (_event != event)
+    {
+        [_event release];
+        _event = [event retain];
+        [self displayEvent];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +60,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self displayEvent];
     // Do any additional setup after loading the view from its nib.
 }
 

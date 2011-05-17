@@ -12,6 +12,7 @@
 #import "EventDetailVC.h"
 #import "Event.h"
 #import "EventModel.h"
+#import "EventDetailNavCon.h"
 
 @implementation ProtoRallyAppDelegate
 
@@ -25,11 +26,16 @@
 {
     EventListVC *list = [[EventListVC alloc] initWithEventModel:self.eventModel];
     EventEntryVC *entry = [[EventEntryVC alloc] initWithEventEntryDelegate:self.eventModel];
-    EventDetailVC *detail = [[EventDetailVC alloc] initWithEventModel:self.eventModel];
+    EventDetailVC *detail = [[EventDetailVC alloc] initWithEvent:nil];
+//    detail.textField.text = @"Original Root";
+    
+    EventDetailNavCon *navCon = [[EventDetailNavCon alloc] initWithRootViewController:detail eventModel:self.eventModel];
+    [detail release];
+    [navCon setNavigationBarHidden:YES];
     
     UISplitViewController *svc2 = [[UISplitViewController alloc] init];  
-    svc2.viewControllers = [NSArray arrayWithObjects:list, detail, nil];
-    [detail release]; [list release];
+    svc2.viewControllers = [NSArray arrayWithObjects:list, navCon, nil];
+    [navCon release]; [list release];
     
     UISplitViewController *svc1 = [[UISplitViewController alloc] init];
     svc1.viewControllers = [NSArray arrayWithObjects:entry, svc2, nil];

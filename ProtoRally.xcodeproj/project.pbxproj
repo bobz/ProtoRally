@@ -34,6 +34,7 @@
 		4862D391138057B60061DE1D /* EventDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 4862D390138057B60061DE1D /* EventDetail.m */; };
 		4862D394138057B60061DE1D /* EventImpact.m in Sources */ = {isa = PBXBuildFile; fileRef = 4862D393138057B60061DE1D /* EventImpact.m */; };
 		4862D397138057B70061DE1D /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 4862D396138057B70061DE1D /* Event.m */; };
+		4886F6BD13821BA30074FDCA /* EventDetailNavCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886F6BC13821BA30074FDCA /* EventDetailNavCon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		4862D393138057B60061DE1D /* EventImpact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventImpact.m; sourceTree = "<group>"; };
 		4862D395138057B70061DE1D /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		4862D396138057B70061DE1D /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		4886F6BB13821BA30074FDCA /* EventDetailNavCon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailNavCon.h; path = ProtoRally.xcodeproj/EventDetailNavCon.h; sourceTree = SOURCE_ROOT; };
+		4886F6BC13821BA30074FDCA /* EventDetailNavCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailNavCon.m; path = ProtoRally.xcodeproj/EventDetailNavCon.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +158,8 @@
 				4844BA0D1377784F00F37062 /* EventEntryVC.h */,
 				4844BA0F1377784F00F37062 /* EventListVC.m */,
 				4844BA101377784F00F37062 /* EventListVC.h */,
+				4886F6BB13821BA30074FDCA /* EventDetailNavCon.h */,
+				4886F6BC13821BA30074FDCA /* EventDetailNavCon.m */,
 				4844BA121377784F00F37062 /* EventDetailVC.m */,
 				4844BA111377784F00F37062 /* EventDetailVC.h */,
 				4844B9E81377782800F37062 /* MainWindow.xib */,
@@ -321,6 +326,7 @@
 				4862D391138057B60061DE1D /* EventDetail.m in Sources */,
 				4862D394138057B60061DE1D /* EventImpact.m in Sources */,
 				4862D397138057B70061DE1D /* Event.m in Sources */,
+				4886F6BD13821BA30074FDCA /* EventDetailNavCon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
