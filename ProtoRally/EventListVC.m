@@ -42,16 +42,7 @@
 
 - (void) updateFromEventModel:(EventModel *)eventModel
 {
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    request.entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:eventModel.managedObjectContext];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"eventIndex" ascending:NO]];
-    request.predicate = nil;
-    request.fetchBatchSize = 20;
-    
-    NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:eventModel.managedObjectContext sectionNameKeyPath:nil cacheName:@"MyEventCache"];
-    [request release];
-    self.fetchedResultsController = frc;
-    [frc release];
+    self.fetchedResultsController = [eventModel sortedEvents];
 }
 
 

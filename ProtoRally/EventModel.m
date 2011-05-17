@@ -30,7 +30,30 @@
 -(NSNumber *)counter
 {
     if (!_counter) {
-        _counter = [[NSNumber numberWithInt:0] retain];
+        
+        
+        NSError *error = nil;
+        NSFetchedResultsController *frc = [self sortedEvents];
+        [frc performFetch:&error];
+        if (error) {
+            NSLog(@"[EventModel counter:] %@ (%@)", [error localizedDescription], [error localizedFailureReason]);
+        }
+
+        
+        NSNumber *topEvent;
+        NSArray *arr = [frc fetchedObjects];
+        if (arr.count > 0)
+        {
+            topEvent = [[arr objectAtIndex:0] eventIndex];
+        }
+        else
+        {
+            topEvent = [NSNumber numberWithInt:0];
+        }
+        
+        NSLog(@"Top event found: %@", topEvent);
+        
+        _counter = [[NSNumber numberWithInt:[topEvent intValue] + 1] retain];
     }
     return _counter;
     
@@ -49,7 +72,7 @@
     self.managedObjectContext = nil;
     self.managedObjectModel = nil;
     self.activeEvent = nil;
-    self.counter = 0;
+    self.counter = nil;
 //    [_persistentStoreCoordinator release]; _persistentStoreCoordinator = nil;
     for (NSObject *listener in self.listeners) {
         if ([listener conformsToProtocol:@protocol(EventModelUpdatedListener) ])
@@ -141,6 +164,19 @@
         } 
     }
 
+}
+
+-(NSFetchedResultsController*) sortedEvents
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    request.entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"eventIndex" ascending:NO]];
+    request.predicate = nil;
+    request.fetchBatchSize = 20;
+    
+    NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"MyEventCache"];
+    [request release];
+    return [frc autorelease];
 }
 
 /**

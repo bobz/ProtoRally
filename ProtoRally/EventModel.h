@@ -50,4 +50,5 @@
 -(void)addEventModelListener:(NSObject *)eventModelListener;
 -(Event *)eventForIndex:(NSNumber *)index;
 -(void)addNewEventOfType:(NSString *)eventType;
+-(NSFetchedResultsController *)sortedEvents;
 @end
