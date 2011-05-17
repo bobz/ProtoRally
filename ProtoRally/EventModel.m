@@ -118,7 +118,9 @@
 
 -(void)addNewEventOfType:(NSString *)eventType
 {
-    [self setActiveEvent: [self newEventOfType:eventType]];
+    Event *newEvent = [self newEventOfType:eventType];
+    [self saveContext];
+    [self setActiveEvent: newEvent];
 }
 
 -(void)saveContext

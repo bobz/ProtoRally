@@ -10,6 +10,7 @@
 
 @interface EventListVC()
 @property (nonatomic, retain) EventModel *eventModel;
+@property BOOL isSelecting;
 @end
 
 @implementation EventListVC
@@ -17,7 +18,7 @@
 @synthesize fetchedResultsController;
 @synthesize titleKey, subtitleKey, searchKey;
 @synthesize eventModel = _eventModel;
-
+@synthesize isSelecting = _isSelecting;
 
 - (id)initWithStyle:(UITableViewStyle)style eventModel:(EventModel *)eventModel
 {
@@ -27,6 +28,7 @@
         [eventModel addEventModelListener:self];
         self.titleKey=@"type";
         self.subtitleKey=@"eventIndex";
+        self.isSelecting = NO;
         [self updateFromEventModel:eventModel];
     }
     return self;
@@ -52,6 +54,7 @@
     [frc release];
 }
 
+
 - (void)managedObjectSelected:(NSManagedObject *)managedObject
 {
     // Navigation logic may go here. Create and push another view controller.
@@ -63,7 +66,9 @@
     
     if ([managedObject isKindOfClass:[Event class]]) {
         NSLog(@"Got Event: %@", managedObject);
+        self.isSelecting = YES;
         [self.eventModel setActiveEvent:((Event *)managedObject)];  
+        self.isSelecting = NO;
     }
     else
     {
@@ -148,6 +153,14 @@
 	return self.fetchedResultsController;
 }
 
+-(void)activeEventChanged:(Event *)event
+{
+    if(!self.isSelecting)
+    {
+        NSIndexPath *path = [[self fetchedResultsControllerForTableView:self.tableView] indexPathForObject:event];
+        [self.tableView selectRowAtIndexPath:path animated:YES scrollPosition:UITableViewScrollPositionTop];
+    }
+}
 
 // UISearchDisplayDelegate
 - (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller
