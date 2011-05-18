@@ -30,19 +30,28 @@
     return self;
 }
 
-- (void)activeEventChanged:(Event *)event //fromEvent:(id)prevEventOrNil
+- (void)activeEventChanged:(Event *)event fromEvent:(Event *)prevEventOrNil
 {
     
     EventDetailVC *edvc = [[EventDetailVC alloc] initWithEvent:event];
     
     [self popToRootViewControllerAnimated:NO];
+        
+    UIViewAnimationOptions transition;
+    if (prevEventOrNil && event && ([[event eventIndex] intValue] < [[prevEventOrNil eventIndex] intValue] ))
+    {
+        transition = UIViewAnimationOptionTransitionCurlUp;
+    }
+    else
+    {
+        transition = UIViewAnimationOptionTransitionCurlDown;
+    }
     
-//    [self pushViewController:edvc animated:YES];
     
     [UIView 
-     transitionWithView:self.view
-     duration:1.0
-     options:UIViewAnimationOptionTransitionCurlDown
+     transitionWithView:self.view 
+     duration:.5
+     options: transition
      animations:^{ 
          [self  
           pushViewController:edvc 

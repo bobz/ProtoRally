@@ -86,14 +86,14 @@
 {
     NSLog(@"Setting Active Event to %@", event.eventIndex);
 
-    [_activeEvent release];
+    Event *oldEvent = [_activeEvent autorelease];
     _activeEvent = event;
     [_activeEvent retain];
         
     for (NSObject *listener in self.listeners) {
         if ([listener conformsToProtocol:@protocol(ActiveEventChangedListener) ])
         {
-            [((id<ActiveEventChangedListener>) listener) activeEventChanged:event];
+            [((id<ActiveEventChangedListener>) listener) activeEventChanged:event fromEvent:oldEvent];
         }
     }
 }

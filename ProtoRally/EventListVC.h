@@ -50,5 +50,5 @@
 
 - (id)initWithEventModel:(EventModel *)eventModel;
 - (void)updateFromEventModel:(EventModel *)eventModel;
-- (void)activeEventChanged:(Event *)event;
+- (void)activeEventChanged:(Event *)event fromEvent:(Event *)prevEventOrNil;
 @end
