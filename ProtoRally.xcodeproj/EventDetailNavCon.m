@@ -30,14 +30,26 @@
     return self;
 }
 
-- (void)activeEventChanged:(Event *)event
+- (void)activeEventChanged:(Event *)event //fromEvent:(id)prevEventOrNil
 {
     
-        EventDetailVC *edvc = [[EventDetailVC alloc] initWithEvent:event];
+    EventDetailVC *edvc = [[EventDetailVC alloc] initWithEvent:event];
     
     [self popToRootViewControllerAnimated:NO];
     
-    [self pushViewController:edvc animated:YES];
+//    [self pushViewController:edvc animated:YES];
+    
+    [UIView 
+     transitionWithView:self.view
+     duration:1.0
+     options:UIViewAnimationOptionTransitionCurlDown
+     animations:^{ 
+         [self  
+          pushViewController:edvc 
+          animated:NO];
+     }
+     completion:NULL];
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
