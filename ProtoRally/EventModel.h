@@ -30,7 +30,7 @@
 @end
 
 @protocol ActiveEventChangedListener
-- (void)activeEventChanged:(Event *)event;
+- (void)activeEventChanged:(Event *)event fromEvent:(Event *)prevEventOrNil;
 @end
 
 

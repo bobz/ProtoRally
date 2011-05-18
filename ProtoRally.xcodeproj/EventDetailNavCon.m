@@ -30,7 +30,7 @@
     return self;
 }
 
-- (void)activeEventChanged:(Event *)event //fromEvent:(id)prevEventOrNil
+- (void)activeEventChanged:(Event *)event fromEvent:(Event *)prevEventOrNil
 {
     
     EventDetailVC *edvc = [[EventDetailVC alloc] initWithEvent:event];
@@ -39,10 +39,31 @@
     
 //    [self pushViewController:edvc animated:YES];
     
+    UIViewAnimationOptions transition;
+//    NSLog(@"Comparing event: %@ < %@", [event eventIndex], [prevEventOrNil eventIndex]);
+    if (prevEventOrNil && event && ([[event eventIndex] intValue] < [[prevEventOrNil eventIndex] intValue] ))
+    {
+//        if ([event eventIndex] < [prevEventOrNil eventIndex]) NSLog(@"[event eventIndex] < [prevEventOrNil eventIndex]");
+//        NSLog(@"Comparing event: %@ < %@", [event eventIndex], [prevEventOrNil eventIndex]);
+//        NSLog(@"Curling up");
+        transition = UIViewAnimationOptionTransitionCurlUp;
+    }
+    else
+    {
+//        if (event) NSLog(@"Event!!!");
+//        if (prevEventOrNil) NSLog(@"PrevEvent!!!");
+//        if ([event eventIndex] < [prevEventOrNil eventIndex]) NSLog(@"[event eventIndex] < [prevEventOrNil eventIndex]");
+//        NSLog(@"Curling down");
+        transition = UIViewAnimationOptionTransitionCurlDown;
+    }
+    
+//    NSLog(@"Got %d", transition);
+    
+    
     [UIView 
-     transitionWithView:self.view
-     duration:1.0
-     options:UIViewAnimationOptionTransitionCurlDown
+     transitionWithView:self.view 
+     duration:.5
+     options: transition
      animations:^{ 
          [self  
           pushViewController:edvc 

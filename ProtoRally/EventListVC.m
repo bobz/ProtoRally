@@ -144,7 +144,7 @@
 	return self.fetchedResultsController;
 }
 
--(void)activeEventChanged:(Event *)event
+-(void)activeEventChanged:(Event *)event fromEvent:(Event *)prevEventOrNil
 {
     if(!self.isSelecting)
     {

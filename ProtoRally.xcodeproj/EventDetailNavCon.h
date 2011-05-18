@@ -14,7 +14,7 @@
 }
 
 -(id)initWithRootViewController:(UIViewController *)rootViewController eventModel:(EventModel *)eventModel;
-- (void)activeEventChanged:(Event *)event;
+- (void)activeEventChanged:(Event *)event fromEvent:(Event *)prevEventOrNil;
 
 
 @end
