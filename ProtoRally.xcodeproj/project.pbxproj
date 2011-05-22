@@ -37,6 +37,8 @@
 		4863FF621388A3B800A41E22 /* TurnoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4863FF601388A3B800A41E22 /* TurnoverVC.m */; };
 		4863FF631388A3B800A41E22 /* TurnoverVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4863FF611388A3B800A41E22 /* TurnoverVC.xib */; };
 		4886F6BD13821BA30074FDCA /* EventDetailNavCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886F6BC13821BA30074FDCA /* EventDetailNavCon.m */; };
+		48DB08DF1388A8B300B487CE /* StoppageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DB08DD1388A8B300B487CE /* StoppageVC.m */; };
+		48DB08E01388A8B300B487CE /* StoppageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DB08DE1388A8B300B487CE /* StoppageVC.xib */; };
 		48F4C96513888FD100EB0A89 /* ShotVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F4C96313888FD100EB0A89 /* ShotVC.m */; };
 		48F4C96613888FD100EB0A89 /* ShotVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F4C96413888FD100EB0A89 /* ShotVC.xib */; };
 /* End PBXBuildFile section */
@@ -94,6 +96,9 @@
 		4863FF611388A3B800A41E22 /* TurnoverVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TurnoverVC.xib; sourceTree = "<group>"; };
 		4886F6BB13821BA30074FDCA /* EventDetailNavCon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailNavCon.h; path = ProtoRally.xcodeproj/EventDetailNavCon.h; sourceTree = SOURCE_ROOT; };
 		4886F6BC13821BA30074FDCA /* EventDetailNavCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailNavCon.m; path = ProtoRally.xcodeproj/EventDetailNavCon.m; sourceTree = SOURCE_ROOT; };
+		48DB08DC1388A8B300B487CE /* StoppageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoppageVC.h; sourceTree = "<group>"; };
+		48DB08DD1388A8B300B487CE /* StoppageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoppageVC.m; sourceTree = "<group>"; };
+		48DB08DE1388A8B300B487CE /* StoppageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoppageVC.xib; sourceTree = "<group>"; };
 		48F4C96213888FD100EB0A89 /* ShotVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotVC.h; sourceTree = "<group>"; };
 		48F4C96313888FD100EB0A89 /* ShotVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotVC.m; sourceTree = "<group>"; };
 		48F4C96413888FD100EB0A89 /* ShotVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShotVC.xib; sourceTree = "<group>"; };
@@ -174,6 +179,8 @@
 				48F4C96313888FD100EB0A89 /* ShotVC.m */,
 				4863FF5F1388A3B800A41E22 /* TurnoverVC.h */,
 				4863FF601388A3B800A41E22 /* TurnoverVC.m */,
+				48DB08DC1388A8B300B487CE /* StoppageVC.h */,
+				48DB08DD1388A8B300B487CE /* StoppageVC.m */,
 				4844BA121377784F00F37062 /* EventDetailVC.m */,
 				4844BA111377784F00F37062 /* EventDetailVC.h */,
 				4844B9E81377782800F37062 /* MainWindow.xib */,
@@ -181,6 +188,7 @@
 				4844BA151377784F00F37062 /* EventDetailVC.xib */,
 				48F4C96413888FD100EB0A89 /* ShotVC.xib */,
 				4863FF611388A3B800A41E22 /* TurnoverVC.xib */,
+				48DB08DE1388A8B300B487CE /* StoppageVC.xib */,
 				4844B9EB1377782800F37062 /* ProtoRally.xcdatamodeld */,
 				4862D38F138057B60061DE1D /* EventDetail.h */,
 				4862D390138057B60061DE1D /* EventDetail.m */,
@@ -299,6 +307,7 @@
 				4844BA1F137779D700F37062 /* SmallFace.png in Resources */,
 				48F4C96613888FD100EB0A89 /* ShotVC.xib in Resources */,
 				4863FF631388A3B800A41E22 /* TurnoverVC.xib in Resources */,
+				48DB08E01388A8B300B487CE /* StoppageVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +356,7 @@
 				4886F6BD13821BA30074FDCA /* EventDetailNavCon.m in Sources */,
 				48F4C96513888FD100EB0A89 /* ShotVC.m in Sources */,
 				4863FF621388A3B800A41E22 /* TurnoverVC.m in Sources */,
+				48DB08DF1388A8B300B487CE /* StoppageVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
