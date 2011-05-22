@@ -8,6 +8,7 @@
 
 #import "EventDetailNavCon.h"
 #import "EventDetailVC.h"
+#import "ShotVC.h"
 
 @interface EventDetailNavCon()
 @property (retain) EventModel *eventModel;
@@ -33,7 +34,16 @@
 - (void)activeEventChanged:(Event *)event fromEvent:(Event *)prevEventOrNil
 {
     
-    EventDetailVC *edvc = [[EventDetailVC alloc] initWithEvent:event];
+    EventDetailVC *edvc; // = [[EventDetailVC alloc] initWithEvent:event];
+    
+    if ([@"Shot" compare:event.type] == 0 )
+    {
+        edvc = [[ShotVC alloc]init];
+    }
+    else
+    {
+        edvc = [[EventDetailVC alloc] init];
+    }
     
     [self popToRootViewControllerAnimated:NO];
         

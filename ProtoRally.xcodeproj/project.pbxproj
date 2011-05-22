@@ -35,6 +35,8 @@
 		4862D394138057B60061DE1D /* EventImpact.m in Sources */ = {isa = PBXBuildFile; fileRef = 4862D393138057B60061DE1D /* EventImpact.m */; };
 		4862D397138057B70061DE1D /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 4862D396138057B70061DE1D /* Event.m */; };
 		4886F6BD13821BA30074FDCA /* EventDetailNavCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4886F6BC13821BA30074FDCA /* EventDetailNavCon.m */; };
+		48F4C96513888FD100EB0A89 /* ShotVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F4C96313888FD100EB0A89 /* ShotVC.m */; };
+		48F4C96613888FD100EB0A89 /* ShotVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F4C96413888FD100EB0A89 /* ShotVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,9 @@
 		4862D396138057B70061DE1D /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		4886F6BB13821BA30074FDCA /* EventDetailNavCon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailNavCon.h; path = ProtoRally.xcodeproj/EventDetailNavCon.h; sourceTree = SOURCE_ROOT; };
 		4886F6BC13821BA30074FDCA /* EventDetailNavCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailNavCon.m; path = ProtoRally.xcodeproj/EventDetailNavCon.m; sourceTree = SOURCE_ROOT; };
+		48F4C96213888FD100EB0A89 /* ShotVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShotVC.h; sourceTree = "<group>"; };
+		48F4C96313888FD100EB0A89 /* ShotVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShotVC.m; sourceTree = "<group>"; };
+		48F4C96413888FD100EB0A89 /* ShotVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShotVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,11 +165,14 @@
 				4844BA101377784F00F37062 /* EventListVC.h */,
 				4886F6BB13821BA30074FDCA /* EventDetailNavCon.h */,
 				4886F6BC13821BA30074FDCA /* EventDetailNavCon.m */,
+				48F4C96213888FD100EB0A89 /* ShotVC.h */,
+				48F4C96313888FD100EB0A89 /* ShotVC.m */,
 				4844BA121377784F00F37062 /* EventDetailVC.m */,
 				4844BA111377784F00F37062 /* EventDetailVC.h */,
 				4844B9E81377782800F37062 /* MainWindow.xib */,
 				4844BA141377784F00F37062 /* EventEntryVC.xib */,
 				4844BA151377784F00F37062 /* EventDetailVC.xib */,
+				48F4C96413888FD100EB0A89 /* ShotVC.xib */,
 				4844B9EB1377782800F37062 /* ProtoRally.xcdatamodeld */,
 				4862D38F138057B60061DE1D /* EventDetail.h */,
 				4862D390138057B60061DE1D /* EventDetail.m */,
@@ -281,6 +289,7 @@
 				4844BA1B1377784F00F37062 /* EventDetailVC.xib in Resources */,
 				4844BA1D1377785C00F37062 /* Default-Landscape~ipad.png in Resources */,
 				4844BA1F137779D700F37062 /* SmallFace.png in Resources */,
+				48F4C96613888FD100EB0A89 /* ShotVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +336,7 @@
 				4862D394138057B60061DE1D /* EventImpact.m in Sources */,
 				4862D397138057B70061DE1D /* Event.m in Sources */,
 				4886F6BD13821BA30074FDCA /* EventDetailNavCon.m in Sources */,
+				48F4C96513888FD100EB0A89 /* ShotVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
