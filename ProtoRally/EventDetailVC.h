@@ -16,7 +16,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *textField;
 @property (nonatomic, retain) Event *event;
 
-- (id)initWithEvent:(Event *)event;
+//- (id)initWithEvent:(Event *)event;
 - (void)setDetail:(NSString *)detail ToValue:(NSString *)value;
 
 @end

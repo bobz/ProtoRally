@@ -26,7 +26,7 @@
 {
     EventListVC *list = [[EventListVC alloc] initWithEventModel:self.eventModel];
     EventEntryVC *entry = [[EventEntryVC alloc] initWithEventEntryDelegate:self.eventModel];
-    EventDetailVC *detail = [[EventDetailVC alloc] initWithEvent:nil];
+    EventDetailVC *detail = [[EventDetailVC alloc] init];
 //    detail.textField.text = @"Original Root";
     
     EventDetailNavCon *navCon = [[EventDetailNavCon alloc] initWithRootViewController:detail eventModel:self.eventModel];

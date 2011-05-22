@@ -14,19 +14,23 @@
 @synthesize textField = _textField;
 @synthesize event = _event;
 
-- (id)initWithEvent:(Event *)event
-{
-    self = [super initWithNibName:nil bundle:nil];
-    if (self) {
-        self.event = event;
-//        [eventModel addEventModelListener:self];
-    }
-    return self;
-}
+//- (id)initWithEvent:(Event *)event
+//{
+//    self = [super initWithNibName:nil bundle:nil];
+//    if (self) {
+//        self.event = event;
+////        [eventModel addEventModelListener:self];
+//    }
+//    return self;
+//}
 
 -(void)setDetail:(NSString *)detail ToValue:(NSString *)value
 {
-    NSLog(@"Setting [%@] to [%@]", detail, value);
+    if (self.event)
+    {
+        NSLog(@"Setting [%@] to [%@]", detail, value);
+
+    }
 }
 
 -(void)displayEvent
