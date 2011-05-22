@@ -20,6 +20,20 @@
     return self;
 }
 
+-(void)setStoppageType:(id)sender
+{
+    if ([sender isKindOfClass:[UISegmentedControl class]])
+    {
+        UISegmentedControl *segCtrl = (UISegmentedControl *)sender;
+        NSInteger index = segCtrl.selectedSegmentIndex;
+        NSLog(@"button index: %d", index);
+        NSString *value = [segCtrl titleForSegmentAtIndex:index];
+        NSLog(@"button text: %@", value);
+        
+        [self setDetail:@"StoppageType" ToValue:value];
+    }
+}
+
 - (void)dealloc
 {
     [super dealloc];

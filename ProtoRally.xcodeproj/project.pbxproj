@@ -209,20 +209,20 @@
 		48C0105B13899E99000A739D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4844BA0E1377784F00F37062 /* EventEntryVC.m */,
 				4844BA0D1377784F00F37062 /* EventEntryVC.h */,
-				4844BA0F1377784F00F37062 /* EventListVC.m */,
 				4844BA101377784F00F37062 /* EventListVC.h */,
 				4886F6BB13821BA30074FDCA /* EventDetailNavCon.h */,
-				4886F6BC13821BA30074FDCA /* EventDetailNavCon.m */,
-				48F4C96213888FD100EB0A89 /* ShotVC.h */,
-				48F4C96313888FD100EB0A89 /* ShotVC.m */,
-				4863FF5F1388A3B800A41E22 /* TurnoverVC.h */,
-				4863FF601388A3B800A41E22 /* TurnoverVC.m */,
-				48DB08DC1388A8B300B487CE /* StoppageVC.h */,
-				48DB08DD1388A8B300B487CE /* StoppageVC.m */,
-				4844BA121377784F00F37062 /* EventDetailVC.m */,
 				4844BA111377784F00F37062 /* EventDetailVC.h */,
+				48F4C96213888FD100EB0A89 /* ShotVC.h */,
+				4863FF5F1388A3B800A41E22 /* TurnoverVC.h */,
+				48DB08DC1388A8B300B487CE /* StoppageVC.h */,
+				4844BA0E1377784F00F37062 /* EventEntryVC.m */,
+				4844BA0F1377784F00F37062 /* EventListVC.m */,
+				4886F6BC13821BA30074FDCA /* EventDetailNavCon.m */,
+				4844BA121377784F00F37062 /* EventDetailVC.m */,
+				48F4C96313888FD100EB0A89 /* ShotVC.m */,
+				4863FF601388A3B800A41E22 /* TurnoverVC.m */,
+				48DB08DD1388A8B300B487CE /* StoppageVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -230,15 +230,15 @@
 		48C0105D13899EB3000A739D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4844B9EB1377782800F37062 /* ProtoRally.xcdatamodeld */,
-				484052411378E4F400E50938 /* EventModel.m */,
 				484052401378E4F400E50938 /* EventModel.h */,
-				4862D38F138057B60061DE1D /* EventDetail.h */,
-				4862D390138057B60061DE1D /* EventDetail.m */,
-				4862D392138057B60061DE1D /* EventImpact.h */,
-				4862D393138057B60061DE1D /* EventImpact.m */,
 				4862D395138057B70061DE1D /* Event.h */,
+				4862D38F138057B60061DE1D /* EventDetail.h */,
+				4862D392138057B60061DE1D /* EventImpact.h */,
+				484052411378E4F400E50938 /* EventModel.m */,
 				4862D396138057B70061DE1D /* Event.m */,
+				4862D390138057B60061DE1D /* EventDetail.m */,
+				4862D393138057B60061DE1D /* EventImpact.m */,
+				4844B9EB1377782800F37062 /* ProtoRally.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";

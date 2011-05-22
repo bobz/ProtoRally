@@ -24,6 +24,11 @@
     return self;
 }
 
+-(void)setDetail:(NSString *)detail ToValue:(NSString *)value
+{
+    NSLog(@"Setting [%@] to [%@]", detail, value);
+}
+
 -(void)displayEvent
 {
     if (self.event)
