@@ -9,6 +9,7 @@
 #import "EventDetailNavCon.h"
 #import "EventDetailVC.h"
 #import "ShotVC.h"
+#import "TurnoverVC.h"
 
 @interface EventDetailNavCon()
 @property (retain) EventModel *eventModel;
@@ -39,6 +40,10 @@
     if ([@"Shot" compare:event.type] == 0 )
     {
         edvc = [[ShotVC alloc]init];
+    }
+    else if ([@"Turnover" compare:event.type] == 0 )
+    {
+        edvc = [[TurnoverVC alloc]init];
     }
     else
     {
