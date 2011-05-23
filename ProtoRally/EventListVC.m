@@ -55,7 +55,7 @@
     
     NSLog(@"Managed Object Selected");
     
-    if ([managedObject isKindOfClass:[Event class]]) {
+    if (!self.isSelecting && [managedObject isKindOfClass:[Event class]]) {
         NSLog(@"Got Event: %@", managedObject);
         self.isSelecting = YES;
         [self.eventModel setActiveEvent:((Event *)managedObject)];  
@@ -144,12 +144,17 @@
 	return self.fetchedResultsController;
 }
 
+-(void)selectEvent:(Event *)event
+{
+    NSIndexPath *path = [[self fetchedResultsControllerForTableView:self.tableView] indexPathForObject:event];
+    [self.tableView selectRowAtIndexPath:path animated:YES scrollPosition:UITableViewScrollPositionTop];
+}
+
 -(void)activeEventChanged:(Event *)event fromEvent:(Event *)prevEventOrNil
 {
     if(!self.isSelecting)
     {
-        NSIndexPath *path = [[self fetchedResultsControllerForTableView:self.tableView] indexPathForObject:event];
-        [self.tableView selectRowAtIndexPath:path animated:YES scrollPosition:UITableViewScrollPositionTop];
+        [self selectEvent:event];
     }
 }
 
@@ -344,6 +349,11 @@
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
+    self.isSelecting = YES;
+    [self selectEvent:self.eventModel.activeEvent];
+    self.isSelecting = NO;
+    
+
 }
 
 #pragma mark dealloc
