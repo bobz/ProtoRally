@@ -8,6 +8,8 @@
 
 #import "EventModel.h"
 #import "Event.h"
+#import "EventDetail.h"
+#import "EventImpact.h"
 #import "EventEntryVC.h"
 
 @interface EventModel()
@@ -109,6 +111,43 @@
     self.counter  = [NSNumber numberWithInt:[self.counter intValue] +1];
     
     return event;
+}
+
+-(EventDetail *)event:(Event *)event DetailForKey:(NSString *)detailKey
+{
+    EventDetail *returnDetail = nil;
+    
+    if(event)
+    {
+        for (EventDetail *detail in event.details)
+        {
+            if ([detail.type compare:detailKey] == 0)
+            {
+                returnDetail = detail;
+            }
+        }
+    }
+    if (!returnDetail)
+    {
+        returnDetail = [NSEntityDescription insertNewObjectForEntityForName:@"EventDetail" inManagedObjectContext:self.managedObjectContext];
+        returnDetail.type = detailKey;
+        returnDetail.parentEvent = event;
+    }
+    
+    return returnDetail;
+}
+
+-(void)printDetailsInEvent:(Event *)event
+{
+    NSLog(@"Printing Details for Event: %@ %@", event.type, event.eventIndex);
+    
+    if(event)
+    {
+        for (EventDetail *detail in event.details)
+        {
+            NSLog( @"Detail [%@] Value [%@]", detail.type, detail.value);
+        }
+    }    
 }
 
 -(Event *)eventForIndex:(NSNumber *)eventIndex

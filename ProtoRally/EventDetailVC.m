@@ -7,29 +7,43 @@
 //
 
 #import "EventDetailVC.h"
+#import "EventDetail.h"
+#import "EventImpact.h"
 #import <CoreData/CoreData.h>
 
 @implementation EventDetailVC
 
 @synthesize textField = _textField;
 @synthesize event = _event;
+@synthesize eventModel = _eventModel;
 
-//- (id)initWithEvent:(Event *)event
-//{
-//    self = [super initWithNibName:nil bundle:nil];
-//    if (self) {
-//        self.event = event;
-////        [eventModel addEventModelListener:self];
-//    }
-//    return self;
-//}
+- (id)initWithEventModel:(EventModel *)eventModel
+{
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        [self updateFromEventModel:eventModel];
+    }
+    return self;
+}
 
--(void)setDetail:(NSString *)detail ToValue:(NSString *)value
+-(void)updateFromEventModel:(EventModel *)eventModel
+{
+    self.eventModel = eventModel;
+    self.event = eventModel.activeEvent;
+//    [self.eventModel addEventModelListener:self];
+    
+}
+
+-(void)setDetail:(NSString *)detailKey ToValue:(NSString *)detailValue
 {
     if (self.event)
     {
-        NSLog(@"Setting [%@] to [%@]", detail, value);
-
+        NSLog(@"Setting [%@] to [%@]", detailKey, detailValue);
+        EventDetail *detail = [self.eventModel event:self.event DetailForKey:detailKey];
+        detail.value = detailValue;
+        [self.eventModel saveContext];
+        
+        [self.eventModel printDetailsInEvent:self.event];
     }
 }
 

@@ -51,4 +51,6 @@
 -(Event *)eventForIndex:(NSNumber *)index;
 -(void)addNewEventOfType:(NSString *)eventType;
 -(NSFetchedResultsController *)sortedEvents;
+-(EventDetail *)event:(Event *)event DetailForKey:(NSString *)detailKey;
+-(void) printDetailsInEvent: (Event *)event;
 @end

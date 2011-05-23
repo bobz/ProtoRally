@@ -40,22 +40,22 @@
     
     if ([@"Shot" compare:event.type] == 0 )
     {
-        edvc = [[ShotVC alloc]init];
+        edvc = [[ShotVC alloc]initWithEventModel:self.eventModel];
         edvc.event = event;
     }
     else if ([@"Turnover" compare:event.type] == 0 )
     {
-        edvc = [[TurnoverVC alloc]init];
+        edvc = [[TurnoverVC alloc]initWithEventModel:self.eventModel];
         edvc.event = event;
     }
     else if ([@"Stoppage" compare:event.type] == 0 )
     {
-        edvc = [[StoppageVC alloc]init];
+        edvc = [[StoppageVC alloc]initWithEventModel:self.eventModel];
         edvc.event = event;
     }
     else
     {
-        edvc = [[EventDetailVC alloc] init];
+        edvc = [[EventDetailVC alloc] initWithEventModel:self.eventModel];
         edvc.event = event;
     }
     

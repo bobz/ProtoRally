@@ -16,7 +16,6 @@
 
 @implementation ProtoRallyAppDelegate
 
-
 @synthesize window=_window;
 
 @synthesize coreDataDelegate = _coreDataDelegate;
@@ -26,8 +25,7 @@
 {
     EventListVC *list = [[EventListVC alloc] initWithEventModel:self.eventModel];
     EventEntryVC *entry = [[EventEntryVC alloc] initWithEventEntryDelegate:self.eventModel];
-    EventDetailVC *detail = [[EventDetailVC alloc] init];
-//    detail.textField.text = @"Original Root";
+    EventDetailVC *detail = [[EventDetailVC alloc] initWithEventModel:self.eventModel];
     
     EventDetailNavCon *navCon = [[EventDetailNavCon alloc] initWithRootViewController:detail eventModel:self.eventModel];
     [detail release];
