@@ -46,6 +46,10 @@
         [self.eventModel printDetailsInEvent:self.event];
     }
 }
+-(void)resetUI
+{
+    self.textField.text = @"Event Not Found";
+}
 
 -(void)displayEvent
 {
@@ -66,6 +70,7 @@
     {
         [_event release];
         _event = [event retain];
+        [self resetUI];
         [self displayEvent];
     }
 }

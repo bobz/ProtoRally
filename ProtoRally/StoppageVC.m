@@ -46,6 +46,11 @@
     }
 }
 
+- (void)resetUI
+{
+    [self updateStoppageTypeUI:@"Out Of Bounds"];
+}
+
 - (void)displayEvent
 {
     for (EventDetail *ed in self.event.details) {
