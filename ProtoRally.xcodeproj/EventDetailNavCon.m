@@ -13,13 +13,21 @@
 #import "StoppageVC.h"
 
 @interface EventDetailNavCon()
-@property (retain) EventModel *eventModel;
+@property (nonatomic, retain) EventModel *eventModel;
+@property (nonatomic, retain) ShotVC *shotVC;
+@property (nonatomic, retain) TurnoverVC *turnoverVC;
+@property (nonatomic, retain) StoppageVC *stoppageVC;
+@property (nonatomic, retain) EventDetailVC *detailVC;
 @end
 
 
 @implementation EventDetailNavCon
 
 @synthesize eventModel = _eventModel;
+@synthesize shotVC = _shotVC;
+@synthesize turnoverVC = _turnoverVC;
+@synthesize stoppageVC = _stoppageVC;
+@synthesize detailVC = _detailVC;
 
 - (id)initWithRootViewController:(UIViewController *)rootViewController eventModel:(EventModel *)eventModel
 {
@@ -27,7 +35,13 @@
     if(self)
     {
         self.eventModel = eventModel;
+        self.shotVC = [[[ShotVC alloc]initWithEventModel:self.eventModel] autorelease];
+        self.turnoverVC = [[[TurnoverVC alloc] initWithEventModel:self.eventModel]autorelease];
+        self.stoppageVC = [[[StoppageVC alloc]initWithEventModel:self.eventModel]autorelease];
+        self.detailVC = [[[EventDetailVC alloc]initWithEventModel:self.eventModel] autorelease];
+        
         [eventModel addEventModelListener:self];
+        
     }
     
     return self;
@@ -40,24 +54,22 @@
     
     if ([@"Shot" compare:event.type] == 0 )
     {
-        edvc = [[ShotVC alloc]initWithEventModel:self.eventModel];
-        edvc.event = event;
+        edvc = self.shotVC;
     }
     else if ([@"Turnover" compare:event.type] == 0 )
     {
-        edvc = [[TurnoverVC alloc]initWithEventModel:self.eventModel];
-        edvc.event = event;
+        edvc = self.turnoverVC;
     }
     else if ([@"Stoppage" compare:event.type] == 0 )
     {
-        edvc = [[StoppageVC alloc]initWithEventModel:self.eventModel];
-        edvc.event = event;
+        edvc = self.stoppageVC;
     }
     else
     {
-        edvc = [[EventDetailVC alloc] initWithEventModel:self.eventModel];
-        edvc.event = event;
+        edvc = self.detailVC;
     }
+    
+    edvc.event = event;
     
     [self popToRootViewControllerAnimated:NO];
         
