@@ -22,4 +22,6 @@
 
 - (void)setDetail:(NSString *)detail ToValue:(NSString *)value;
 -(void)updateFromEventModel:(EventModel *)eventModel;
+
+-(void)displayEvent;
 @end

@@ -7,9 +7,10 @@
 //
 
 #import "StoppageVC.h"
-
+#import "EventDetail.h"
 
 @implementation StoppageVC
+@synthesize stoppageTypeControl = _stoppageTypeControl;
 
 -(void)setStoppageType:(id)sender
 {
@@ -25,6 +26,41 @@
     }
 }
 
+-(void)updateStoppageTypeUI:(NSString *)stoppageType
+{
+    if ([@"Out Of Bounds" compare:stoppageType] == 0)
+    {
+        [self.stoppageTypeControl setSelectedSegmentIndex:0]; 
+    }
+    else if ([@"Time Out" compare:stoppageType] == 0)
+    {
+        [self.stoppageTypeControl setSelectedSegmentIndex:1];
+    }
+    else if ([@"Violation" compare:stoppageType] == 0)
+    {
+        [self.stoppageTypeControl setSelectedSegmentIndex:2];
+    }
+    else
+    {
+        NSLog(@"Error, not a recognized stoppage type: %@", stoppageType);
+    }
+}
+
+- (void)displayEvent
+{
+    for (EventDetail *ed in self.event.details) {
+        if ([@"StoppageType" compare:ed.type] == 0)
+        {
+            [self updateStoppageTypeUI:ed.value];
+        }
+        else
+        {
+            NSLog(@"Error, not a recognized detail");
+        }
+    }
+    
+}
+
 - (void)dealloc
 {
     [super dealloc];
@@ -34,7 +70,6 @@
 {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
     // Release any cached data, images, etc that aren't in use.
 }
 

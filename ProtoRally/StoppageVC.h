@@ -13,6 +13,9 @@
     
 }
 
+@property (nonatomic, retain) IBOutlet UISegmentedControl *stoppageTypeControl;
+
 -(IBAction) setStoppageType:(id)sender;
+-(void) updateStoppageTypeUI:(NSString *)stoppageType;
 
 @end
