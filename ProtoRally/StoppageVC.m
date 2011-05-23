@@ -9,52 +9,63 @@
 #import "StoppageVC.h"
 #import "EventDetail.h"
 
+@interface StoppageVC()
+@property (nonatomic, retain) NSArray *stoppageTypeControlSegments;
+@end
+
 @implementation StoppageVC
+
+NSString * const STOPPAGE_TYPE = @"StoppageType";
+NSString * const ST_OUT_OF_BOUNDS = @"Out Of Bounds";
+NSString * const ST_TIME_OUT = @"Time Out";
+NSString * const ST_VIOLATION = @"Violation";
 @synthesize stoppageTypeControl = _stoppageTypeControl;
+@synthesize stoppageTypeControlSegments = _stoppageTypeControlSegments;
+
+-(NSArray *)stoppageTypeControlSegments
+{
+    if (!_stoppageTypeControlSegments)
+    {
+        _stoppageTypeControlSegments = [[NSArray arrayWithObjects:
+                                        ST_OUT_OF_BOUNDS, 
+                                        ST_TIME_OUT, 
+                                        ST_VIOLATION, 
+                                        nil] retain];
+
+    }
+    return _stoppageTypeControlSegments;
+}
 
 -(void)setStoppageType:(id)sender
 {
     if ([sender isKindOfClass:[UISegmentedControl class]])
     {
         UISegmentedControl *segCtrl = (UISegmentedControl *)sender;
-        NSInteger index = segCtrl.selectedSegmentIndex;
-        NSLog(@"button index: %d", index);
-        NSString *value = [segCtrl titleForSegmentAtIndex:index];
-        NSLog(@"button text: %@", value);
-        
-        [self setDetail:@"StoppageType" ToValue:value];
+        NSString *value = [segCtrl titleForSegmentAtIndex:segCtrl.selectedSegmentIndex];
+        [self setDetail:STOPPAGE_TYPE ToValue:value];
     }
+    else NSLog(@"Error, stoppage type from invalid ui element");
 }
 
 -(void)updateStoppageTypeUI:(NSString *)stoppageType
 {
-    if ([@"Out Of Bounds" compare:stoppageType] == 0)
-    {
-        [self.stoppageTypeControl setSelectedSegmentIndex:0]; 
-    }
-    else if ([@"Time Out" compare:stoppageType] == 0)
-    {
-        [self.stoppageTypeControl setSelectedSegmentIndex:1];
-    }
-    else if ([@"Violation" compare:stoppageType] == 0)
-    {
-        [self.stoppageTypeControl setSelectedSegmentIndex:2];
-    }
-    else
+    NSUInteger index = [self.stoppageTypeControlSegments indexOfObject:stoppageType];
+    if (index == NSNotFound) 
     {
         NSLog(@"Error, not a recognized stoppage type: %@", stoppageType);
     }
+    [self.stoppageTypeControl setSelectedSegmentIndex:index ]; 
 }
 
 - (void)resetUI
 {
-    [self updateStoppageTypeUI:@"Out Of Bounds"];
+    [self updateStoppageTypeUI:ST_OUT_OF_BOUNDS];
 }
 
 - (void)displayEvent
 {
     for (EventDetail *ed in self.event.details) {
-        if ([@"StoppageType" compare:ed.type] == 0)
+        if ([STOPPAGE_TYPE isEqualToString:ed.type] )
         {
             [self updateStoppageTypeUI:ed.value];
         }

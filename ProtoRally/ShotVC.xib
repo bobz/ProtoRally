@@ -54,7 +54,6 @@
 								<int key="NSvFlags">301</int>
 								<string key="NSFrameSize">{350, 21}</string>
 								<reference key="NSSuperview" ref="766721923"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="899375909"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -84,7 +83,6 @@
 								<int key="NSvFlags">301</int>
 								<string key="NSFrame">{{0, 281}, {350, 21}}</string>
 								<reference key="NSSuperview" ref="766721923"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="392779720"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -108,7 +106,6 @@
 								<int key="NSvFlags">301</int>
 								<string key="NSFrame">{{0, 440}, {350, 21}}</string>
 								<reference key="NSSuperview" ref="766721923"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="1069520366"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -132,7 +129,6 @@
 								<int key="NSvFlags">301</int>
 								<string key="NSFrame">{{0, 20}, {350, 44}}</string>
 								<reference key="NSSuperview" ref="766721923"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="566308801"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -170,7 +166,6 @@
 								<int key="NSvFlags">301</int>
 								<string key="NSFrame">{{0, 303}, {350, 44}}</string>
 								<reference key="NSSuperview" ref="766721923"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="843668948"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -208,7 +203,6 @@
 								<int key="NSvFlags">301</int>
 								<string key="NSFrame">{{0, 346}, {350, 44}}</string>
 								<reference key="NSSuperview" ref="766721923"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="863438814"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -246,7 +240,6 @@
 								<int key="NSvFlags">301</int>
 								<string key="NSFrame">{{0, 389}, {350, 44}}</string>
 								<reference key="NSSuperview" ref="766721923"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="983026157"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -255,7 +248,7 @@
 								<int key="IBSelectedSegmentIndex">0</int>
 								<object class="NSArray" key="IBSegmentTitles">
 									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string/>
+									<string>-</string>
 									<string>Defensive Foul</string>
 								</object>
 								<object class="NSMutableArray" key="IBSegmentWidths">
@@ -284,7 +277,6 @@
 								<int key="NSvFlags">301</int>
 								<string key="NSFrame">{{0, 467}, {350, 44}}</string>
 								<reference key="NSSuperview" ref="766721923"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="782888147"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -322,7 +314,6 @@
 								<int key="NSvFlags">299</int>
 								<string key="NSFrame">{{0, 63}, {350, 216}}</string>
 								<reference key="NSSuperview" ref="766721923"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="7966643"/>
 								<object class="NSColor" key="IBUIBackgroundColor" id="1001896893">
 									<int key="NSColorSpace">3</int>
@@ -336,7 +327,6 @@
 								<int key="NSvFlags">299</int>
 								<string key="NSFrame">{{0, 512}, {350, 216}}</string>
 								<reference key="NSSuperview" ref="766721923"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
 								<reference key="IBUIBackgroundColor" ref="1001896893"/>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -345,7 +335,6 @@
 						</object>
 						<string key="NSFrameSize">{350, 748}</string>
 						<reference key="NSSuperview" ref="534087653"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="945256975"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">10</int>
@@ -4758,7 +4747,6 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 				</object>
 				<string key="NSFrameSize">{1004, 768}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="766721923"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -4938,38 +4926,7 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 			<nil key="sourceID"/>
 			<int key="maxID">19</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<object class="IBPartialClassDescription">
-					<string key="className">EventDetailVC</string>
-					<string key="superclassName">UIViewController</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">textField</string>
-						<string key="NS.object.0">UILabel</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">textField</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">textField</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/EventDetailVC.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">ShotVC</string>
-					<string key="superclassName">EventDetailVC</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ShotVC.h</string>
-					</object>
-				</object>
-			</object>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBIPadFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
